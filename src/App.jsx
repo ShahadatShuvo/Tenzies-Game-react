@@ -140,6 +140,7 @@ function App() {
           <button className="rollBtn" onClick={onRollDice}>
             {newMatch === true ? "New Match" : "Roll"}
           </button>
+          { !tenzies && <p className="roll--counter">Roll: {rollCounter}</p>}
         </div>
       </div>
     </div>
