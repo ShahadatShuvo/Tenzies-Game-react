@@ -108,9 +108,11 @@ function App() {
           </p>
         </div>
         <div className="parent">{diceElements}</div>
-        <div className="mt-3 mx-3">
-          {tenzies && <h2>Congrats! you Won!</h2>}
-        </div>
+        {tenzies && (
+          <div className="mt-3 mx-3">
+            <h2>Congrats! you Won!</h2>
+          </div>
+        )}
         <div className="mt-3">
           <button className="rollBtn" onClick={onRollDice}>
             {play === true ? "New Match" : "Roll"}
