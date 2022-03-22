@@ -110,7 +110,7 @@ function App() {
         <div className="parent">{diceElements}</div>
         {tenzies && (
           <div className="mt-3 mx-3">
-            <h2>Congrats! you Won!</h2>
+            <h2>Congrats! you Win!</h2>
           </div>
         )}
         <div className="my-3">
