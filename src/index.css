@@ -1,13 +1,105 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 22em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.body--section {
+  border: 20px solid black;
+  border-radius: 20px;
+  height: 70%;
+  background: lightgrey;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.parent {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.box {
+  border-radius: 10px;
+  height: 100px;
+  min-width: 100px;
+  background: white;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+.isHeld {
+  background-color: #59e391;
+}
+
+.rollBtn {
+  background: rgb(82, 82, 233);
+  border-radius: 10px;
+  min-width: 100px;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  color: rgb(219, 186, 186);
+  user-select: none;
+  cursor: pointer;
+}
+.rollBtn:focus {
+  outline: none;
+}
+.rollBtn:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1.5em;
+  }
+
+  .body--section {
+    border: 10px solid black;
+    border-radius: 20px;
+    background: lightgrey;
+    height: 70%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  .parent {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  .box {
+    border-radius: 10px;
+    height: 50px;
+    min-width: 45px;
+    background: white;
+    margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+  }
 }
