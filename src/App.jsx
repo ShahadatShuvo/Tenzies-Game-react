@@ -6,11 +6,12 @@ import Die from "./components/Die";
 
 function App() {
   const [dice, setDice] = React.useState(allNewDice());
+  console.log(dice)
 
   const [tenzies, setTenzies] = React.useState(false);
 
   const [play, setPlay] = React.useState(false);
-  console.log("play " + play);
+
 
   React.useEffect(() => {
     let temp = 0;
@@ -39,7 +40,6 @@ function App() {
     }
   }, [dice]);
 
-  console.log(tenzies);
 
   function allNewDice() {
     let newDice = [];
@@ -62,7 +62,7 @@ function App() {
       setTenzies(false);
     } else {
       setPlay(false);
-      setTenzies(false)
+      setTenzies(false);
       setDice((prevState) => {
         return prevState.map((dice) => {
           if (dice.isHeld === false) {
