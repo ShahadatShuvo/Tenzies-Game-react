@@ -121,10 +121,8 @@ function App() {
       <div className="body--section">
         <div className="text-center px-3">
           <h1 className="title">
-            Tenzies{" "}
-            <small className="fs-6 text-danger">
-              (Best score: {bestScore})
-            </small>
+            Tenzies
+            <small className="fs-6 text-success"> (Best: {bestScore})</small>
           </h1>
           <p className="instructions">
             Roll until all dice are the same. Click each die to freeze it at its
