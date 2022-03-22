@@ -113,7 +113,7 @@ function App() {
             <h2>Congrats! you Won!</h2>
           </div>
         )}
-        <div className="mt-3">
+        <div className="my-3">
           <button className="rollBtn" onClick={onRollDice}>
             {play === true ? "New Match" : "Roll"}
           </button>
