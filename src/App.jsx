@@ -7,11 +7,13 @@ import Die from "./components/Die";
 
 function App() {
   const [dice, setDice] = React.useState(allNewDice());
-  console.log(dice);
 
   const [tenzies, setTenzies] = React.useState(false);
 
-  const [play, setPlay] = React.useState(false);
+  const [newMatch, setNewMatch] = React.useState(false);
+
+  const [rollCounter, setRollCounter] = React.useState(0);
+  console.log(rollCounter);
 
   React.useEffect(() => {
     let temp = 0;
@@ -24,7 +26,7 @@ function App() {
       }
     }
     if (temp === 1) {
-      setPlay(true);
+      setNewMatch(true);
       let flag = dice[1].value;
       let count = 0;
       dice.map((diceObj) => {
@@ -55,12 +57,14 @@ function App() {
   }
 
   function onRollDice() {
-    if (play === true) {
+    setRollCounter((prevState) => prevState + 1);
+    if (newMatch === true) {
+      setRollCounter(0)
       setDice(allNewDice());
-      setPlay(false);
+      setNewMatch(false);
       setTenzies(false);
     } else {
-      setPlay(false);
+      setNewMatch(false);
       setTenzies(false);
       setDice((prevState) => {
         return prevState.map((dice) => {
@@ -109,13 +113,14 @@ function App() {
         </div>
         <div className="parent">{diceElements}</div>
         {tenzies && (
-          <div className="mt-3 mx-3">
-            <h2>Congrats! you Win!</h2>
+          <div className="mt-3">
+            <h2 className="text-success fw-bolder">Congrats! you Win!</h2>
+            <small>Total {rollCounter} Rolls costed!</small>
           </div>
         )}
         <div className="my-3">
           <button className="rollBtn" onClick={onRollDice}>
-            {play === true ? "New Match" : "Roll"}
+            {newMatch === true ? "New Match" : "Roll"}
           </button>
         </div>
       </div>
