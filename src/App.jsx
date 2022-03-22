@@ -13,7 +13,12 @@ function App() {
   const [newMatch, setNewMatch] = React.useState(false);
 
   const [rollCounter, setRollCounter] = React.useState(0);
-  console.log(rollCounter);
+
+  const [bestScore, setBestScore] = React.useState(
+    JSON.parse(localStorage.getItem("bestScore")) || 100
+  );
+
+  console.log(bestScore);
 
   React.useEffect(() => {
     let temp = 0;
@@ -42,6 +47,11 @@ function App() {
     }
   }, [dice]);
 
+  React.useEffect(() => {
+    console.log("clicked from local storage");
+    localStorage.setItem("bestScore", JSON.stringify(bestScore));
+  }, [bestScore]);
+
   function allNewDice() {
     let newDice = [];
     for (let i = 0; i < 10; i++) {
@@ -58,6 +68,11 @@ function App() {
 
   function onRollDice() {
     setRollCounter((prevState) => prevState + 1);
+    if (tenzies === true) {
+      if (bestScore > rollCounter) {
+        setBestScore(rollCounter);
+      }
+    }
     if (newMatch === true) {
       setRollCounter(0);
       setDice(allNewDice());
@@ -105,7 +120,12 @@ function App() {
       {tenzies && <Confetti />}
       <div className="body--section">
         <div className="text-center px-3">
-          <h1 className="title">Tenzies</h1>
+          <h1 className="title">
+            Tenzies{" "}
+            <small className="fs-6 text-danger">
+              (Best score: {bestScore})
+            </small>
+          </h1>
           <p className="instructions">
             Roll until all dice are the same. Click each die to freeze it at its
             current value between rolls.
