@@ -1,17 +1,17 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { nanoid } from "nanoid";
+import Confetti from "react-confetti";
 
 import Die from "./components/Die";
 
 function App() {
   const [dice, setDice] = React.useState(allNewDice());
-  console.log(dice)
+  console.log(dice);
 
   const [tenzies, setTenzies] = React.useState(false);
 
   const [play, setPlay] = React.useState(false);
-
 
   React.useEffect(() => {
     let temp = 0;
@@ -39,7 +39,6 @@ function App() {
       }
     }
   }, [dice]);
-
 
   function allNewDice() {
     let newDice = [];
@@ -99,6 +98,7 @@ function App() {
 
   return (
     <div className="wrapper">
+      {tenzies && <Confetti />}
       <div className="body--section">
         <div className="text-center px-3">
           <h1 className="title">Tenzies</h1>

@@ -40,9 +40,6 @@
   user-select: none;
 }
 
-.isHeld {
-  background-color: #59e391;
-}
 
 .rollBtn {
   background: rgb(82, 82, 233);
@@ -62,9 +59,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .isHeld {
-    background-color: #59e391;
-  }
+ 
   .wrapper {
     height: 100vh;
     display: flex;
@@ -74,6 +69,7 @@
   }
 
   .body--section {
+    margin: 0 auto;
     border: 10px solid black;
     border-radius: 20px;
     background: lightgrey;
