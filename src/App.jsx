@@ -122,9 +122,9 @@ function App() {
         <div className="text-center px-3">
           <h1 className="title">
             Tenzies
-            <small className="fs-6 text-success">
+            { !tenzies && <small className="fs-6 text-success">
               (Best: {bestScore === 100 ? "null" : bestScore})
-            </small>
+            </small>}
           </h1>
           <p className="instructions">
             Roll until all dice are the same. Click each die to freeze it at its
@@ -135,7 +135,7 @@ function App() {
         {tenzies && (
           <div className="mt-3 px-md-5">
             <h2 className="text-success fw-bolder">Congrats! you Win!</h2>
-            <small>Total {rollCounter} Rolls costed!</small>
+            <small>Total {rollCounter} Rolls costed! <span className="fw-bold">[ previous best: {bestScore} ]</span></small>
           </div>
         )}
         <div className="my-3">
