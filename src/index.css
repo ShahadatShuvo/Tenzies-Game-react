@@ -9,7 +9,7 @@
 .body--section {
   border: 20px solid black;
   border-radius: 20px;
-  height: 70%;
+  height: 80%;
   background: lightgrey;
   display: flex;
   flex-flow: row wrap;

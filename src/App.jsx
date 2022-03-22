@@ -59,7 +59,7 @@ function App() {
   function onRollDice() {
     setRollCounter((prevState) => prevState + 1);
     if (newMatch === true) {
-      setRollCounter(0)
+      setRollCounter(0);
       setDice(allNewDice());
       setNewMatch(false);
       setTenzies(false);
@@ -113,7 +113,7 @@ function App() {
         </div>
         <div className="parent">{diceElements}</div>
         {tenzies && (
-          <div className="mt-3">
+          <div className="mt-3 px-md-5">
             <h2 className="text-success fw-bolder">Congrats! you Win!</h2>
             <small>Total {rollCounter} Rolls costed!</small>
           </div>
