@@ -122,7 +122,9 @@ function App() {
         <div className="text-center px-3">
           <h1 className="title">
             Tenzies
-            <small className="fs-6 text-success"> (Best: {bestScore})</small>
+            <small className="fs-6 text-success">
+              (Best: {bestScore === 100 ? "null" : bestScore})
+            </small>
           </h1>
           <p className="instructions">
             Roll until all dice are the same. Click each die to freeze it at its
@@ -140,7 +142,7 @@ function App() {
           <button className="rollBtn" onClick={onRollDice}>
             {newMatch === true ? "New Match" : "Roll"}
           </button>
-          { !tenzies && <p className="roll--counter">Roll: {rollCounter}</p>}
+          {!tenzies && <p className="roll--counter">Roll: {rollCounter}</p>}
         </div>
       </div>
     </div>
